@@ -1,0 +1,62 @@
+.hdr {
+  position: sticky; top: 0; z-index: 100;
+  border-left: 0; border-right: 0; border-top: 0;
+  border-bottom: 1px solid var(--hairline-soft);
+  box-shadow: none;
+}
+.hdr__row { display: flex; align-items: center; gap: 24px; height: var(--hdr-h); }
+.hdr__logo { display: inline-flex; align-items: center; flex-shrink: 0; }
+.brand__mark { color: #2eb566; }
+.hdr__nav { display: flex; gap: 4px; margin-left: 12px; }
+.hdr__link {
+  padding: 8px 12px; border-radius: var(--r-sm);
+  font-size: 15px; font-weight: 500; color: var(--ink-soft);
+  transition: background 0.2s var(--ease-std), color 0.2s var(--ease-std);
+}
+.hdr__link:hover { background: var(--green-wash); color: var(--ink); }
+.hdr__actions { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.hdr__burger {
+  display: none; width: 42px; height: 42px; border-radius: 50%;
+  align-items: center; justify-content: center; color: var(--ink);
+  background: rgba(255,255,255,0.7); border: 1px solid var(--hairline);
+}
+.hdr__scrim { position: fixed; inset: 0; z-index: 90; background: rgba(26,26,46,0.15); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); cursor: default; }
+.hdr__drawer {
+  position: fixed; top: 0; right: 0; height: 100dvh; width: min(300px, 86vw); z-index: 95;
+  padding: calc(env(safe-area-inset-top, 0px) + 84px) 24px 32px;
+  display: flex; flex-direction: column; gap: 6px;
+  transform: translateX(100%); visibility: hidden;
+  transition: transform 0.35s var(--ease-std), visibility 0s 0.35s;
+  box-shadow: -8px 0 40px rgba(26,26,46,0.08);
+  border-top: 0; border-bottom: 0; border-right: 0;
+}
+.hdr__drawer.is-open { transform: translateX(0); visibility: visible; transition: transform 0.35s var(--ease-std), visibility 0s; }
+.hdr__drawer-link { padding: 12px 14px; border-radius: var(--r-md); font-size: 17px; font-weight: 500; color: var(--ink); }
+.hdr__drawer-link:hover { background: var(--green-wash); }
+.hdr__drawer .btn { margin-top: auto; }
+
+/* Кнопки: как PrimaryButton в Login.jsx (#1a1a2e, radius 14) и зелёная «Записаться» из CourseStore. */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 0 22px; border-radius: 14px;
+  font-size: 15px; font-weight: 600; line-height: 1; white-space: nowrap;
+  transition: transform 0.15s var(--ease-std), opacity 0.15s var(--ease-std), background 0.2s var(--ease-std), box-shadow 0.2s var(--ease-std);
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0) scale(0.98); }
+.btn--ink { background: var(--ink); color: #fff; }
+.btn--ink:hover { background: #26264a; box-shadow: 0 8px 24px rgba(26,26,46,0.18); }
+.btn--green { background: var(--green); color: #fff; }
+.btn--green:hover { background: #2bbd68; box-shadow: 0 8px 24px rgba(39,174,96,0.25); }
+.btn--ghost { background: rgba(255,255,255,0.8); color: var(--ink); border: 1.5px solid var(--hairline); }
+.btn--ghost:hover { border-color: rgba(26,26,46,0.16); }
+.btn--sm { min-height: 42px; padding: 0 18px; font-size: 14px; }
+.btn--lg { min-height: 54px; padding: 0 28px; font-size: 16px; }
+.btn--full { width: 100%; }
+.btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
+
+@media (max-width: 900px) {
+  .hdr__nav { display: none; }
+  .hdr__burger { display: inline-flex; }
+  .hdr__row { gap: 12px; }
+}

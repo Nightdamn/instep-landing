@@ -1,0 +1,116 @@
+/* InStep landing: токены унаследованы от приложения (src/styles/shared.js, Layout.jsx, Login.jsx). */
+
+:root {
+  --font: 'Onest', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --ink: #1a1a2e;
+  --ink-soft: #3a3a5e;
+  --muted: #65657a;      /* 4.8:1 на самой тёмной полосе градиента #e8ecf1; в приложении #8a8a9a, здесь поднят до AA */
+  --muted-2: #65657a;    /* оставлен как алиас для мелких подписей внутри телефона */
+  --hdr-h: 68px;
+  --green: #27ae60;
+  --green-2: #2ecc71;
+  --green-deep: #1f8f4e;
+  --green-wash: rgba(39, 174, 96, 0.08);
+  --green-line: rgba(39, 174, 96, 0.2);
+  --orange: #e67e22;
+
+  --bg: linear-gradient(160deg, #fafbfc 0%, #f0f2f5 30%, #e8ecf1 60%, #f5f7fa 100%);
+  --bg-flat: #f0f2f5;
+  --glass: rgba(255, 255, 255, 0.65);
+  --glass-strong: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --hairline: rgba(0, 0, 0, 0.06);
+  --hairline-soft: rgba(0, 0, 0, 0.04);
+  --tile: #fafafa;
+
+  --shadow-glass: 0 8px 32px rgba(26, 26, 46, 0.05);
+  --shadow-lift: 0 12px 40px rgba(26, 26, 46, 0.07);
+  --shadow-phone: 0 30px 80px rgba(26, 26, 46, 0.14), 0 2px 6px rgba(26, 26, 46, 0.06);
+
+  --r-sm: 10px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+
+  --blur: 20px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-std: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --page-max: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg-flat);
+  background-image: var(--bg);
+  background-attachment: fixed;
+  color: var(--ink);
+  line-height: 1.5;
+  overflow-x: clip;
+  min-height: 100dvh;
+  font-feature-settings: 'tnum' 1;
+}
+
+#root { min-height: 100dvh; }
+
+img, svg { display: block; max-width: 100%; }
+button, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+p a, .theory__body a { text-decoration: underline; text-underline-offset: 0.18em; text-decoration-color: var(--green-line); }
+p a:hover, .theory__body a:hover { text-decoration-color: var(--green); }
+
+@media (max-width: 900px) { :root { --hdr-h: 60px; } }
+
+::selection { background: rgba(39, 174, 96, 0.22); color: var(--ink); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 6px; }
+
+/* Тонкий скроллбар в цветах мира (приложение прячет его целиком; лендинг десктопный). */
+* { scrollbar-width: thin; scrollbar-color: rgba(26, 26, 46, 0.18) transparent; }
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: rgba(26, 26, 46, 0.18); border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+/* Стекло: как glass в shared.js. При запросе меньшей прозрачности - плотный фон. */
+.glass {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(var(--blur));
+  backdrop-filter: blur(var(--blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-glass);
+}
+.glass-strong {
+  background: var(--glass-strong);
+  -webkit-backdrop-filter: blur(var(--blur));
+  backdrop-filter: blur(var(--blur));
+  border: 1px solid var(--glass-border);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .glass, .glass-strong { background: #ffffff; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+
+.wrap { width: min(100% - 2 * var(--gutter), var(--page-max)); margin-inline: auto; }
+
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}

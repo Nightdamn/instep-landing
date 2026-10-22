@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T00:00:00Z",
+  "title": "Design System: InStep Landing",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "primary", "displayName": "Чернила", "canonical": "#1a1a2e", "tonalRamp": ["#0b0b14", "#1a1a2e", "#2a2a48", "#3a3a5e", "#55557c", "#8a8aa6", "#c2c2d3", "#ececf2"] },
+      "step-green": { "role": "primary", "displayName": "Зелёный шаг", "canonical": "#27ae60", "tonalRamp": ["#0f4a28", "#176f3b", "#1f8f4e", "#27ae60", "#2ecc71", "#6fdc9a", "#b2ecc8", "#e3f8eb"] },
+      "mist": { "role": "neutral", "displayName": "Туман", "canonical": "#f0f2f5", "tonalRamp": ["#2a2e36", "#4a505c", "#7a8292", "#aab2bf", "#d0d8e3", "#e8ecf1", "#f0f2f5", "#fafbfc"] },
+      "muted": { "role": "neutral", "displayName": "Приглушённый", "canonical": "#65657a", "tonalRamp": ["#1d1d26", "#34343f", "#4d4d5c", "#65657a", "#8a8a9a", "#aaaab6", "#cfcfd6", "#eeeef1"] },
+      "return-orange": { "role": "tertiary", "displayName": "Оранжевый возврата", "canonical": "#e67e22", "tonalRamp": ["#4a2706", "#7a410d", "#b35c0f", "#e67e22", "#ee9a4f", "#f4b982", "#f9d8b8", "#fdf0e3"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Только H1 первого экрана, две строки." },
+      "headline": { "displayName": "Headline", "purpose": "Заголовки секций и остановок дня." },
+      "lead": { "displayName": "Lead", "purpose": "Подзаголовок под H2, приглушённый, до 58ch." },
+      "label": { "displayName": "Label", "purpose": "Подписи времени суток и бейджи, строчными." }
+    },
+    "shadows": [
+      { "name": "glass", "value": "0 8px 32px rgba(26,26,46,0.05)", "purpose": "Стеклянные карточки в покое." },
+      { "name": "lift", "value": "0 12px 40px rgba(26,26,46,0.07)", "purpose": "Hover на кликабельных карточках." },
+      { "name": "phone", "value": "0 30px 80px rgba(26,26,46,0.14), 0 2px 6px rgba(26,26,46,0.06)", "purpose": "Кадр телефона." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Появление остановок дня, подъём карточек." },
+      { "name": "ease-std", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Переходы состояний, ящик меню (0.35s)." },
+      { "name": "rail-fill", "value": "animation-timeline: view(); animation-range: contain 0% contain 100%", "purpose": "Заполнение дорожки липкой ленты по прокрутке." }
+    ],
+    "breakpoints": [
+      { "name": "hero-stack", "value": "1100px" },
+      { "name": "stops-stack", "value": "1000px" },
+      { "name": "nav-drawer", "value": "900px" },
+      { "name": "two-col", "value": "820px" },
+      { "name": "courses-stack", "value": "640px" },
+      { "name": "rail-compact", "value": "600px" },
+      { "name": "full-width-cta", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Чернильная кнопка действия: Войти, Записаться на курс, Собрать свой курс.",
+      "html": "<button class=\"ds-btn-primary\">Записаться на курс</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border: 0; border-radius: 14px; background: #1a1a2e; color: #fff; font: 600 15px/1 Onest, sans-serif; cursor: pointer; transition: transform .15s cubic-bezier(.4,0,.2,1), background .2s, box-shadow .2s; } .ds-btn-primary:hover { background: #26264a; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(26,26,46,.18); } .ds-btn-primary:active { transform: scale(.98); } .ds-btn-primary:focus-visible { outline: 2px solid #27ae60; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Вторичное действие на стекле.",
+      "html": "<button class=\"ds-btn-ghost\">Собрать свой курс</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 14px; background: rgba(255,255,255,.8); color: #1a1a2e; border: 1.5px solid rgba(0,0,0,.06); font: 600 15px/1 Onest, sans-serif; cursor: pointer; transition: transform .15s, border-color .2s; } .ds-btn-ghost:hover { border-color: rgba(26,26,46,.16); transform: translateY(-1px); } .ds-btn-ghost:focus-visible { outline: 2px solid #27ae60; outline-offset: 3px; }"
+    },
+    {
+      "name": "Glass Card",
+      "kind": "card",
+      "refersTo": "card-glass",
+      "description": "Стеклянная карточка на туманном фоне.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card__title\">Осознанная Походка</div><div class=\"ds-card__meta\">ведёт Мария Коломбина</div></div>",
+      "css": ".ds-card { border-radius: 20px; padding: 22px; background: rgba(255,255,255,.65); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.7); box-shadow: 0 8px 32px rgba(26,26,46,.05); color: #1a1a2e; font-family: Onest, sans-serif; } .ds-card__title { font-size: 18px; font-weight: 700; letter-spacing: -.01em; } .ds-card__meta { margin-top: 4px; font-size: 13px; color: #6f6f82; }"
+    },
+    {
+      "name": "Icon Plate",
+      "kind": "chip",
+      "refersTo": "icon-plate",
+      "description": "Линейная иконка в светло-зелёной плашке.",
+      "html": "<span class=\"ds-plate\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"13\" r=\"8\"/><path d=\"M12 9v4l2 2\"/><path d=\"M5 3 2 6\"/><path d=\"m22 6-3-3\"/></svg></span>",
+      "css": ".ds-plate { width: 40px; height: 40px; border-radius: 11px; display: inline-flex; align-items: center; justify-content: center; background: rgba(39,174,96,.08); color: #27ae60; }"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Пометка «пример» и «идёт сейчас».",
+      "html": "<span class=\"ds-tag\">пример</span> <span class=\"ds-tag ds-tag--live\">идёт сейчас</span>",
+      "css": ".ds-tag { display: inline-block; font: 700 11px/1.3 Onest, sans-serif; letter-spacing: .02em; padding: 4px 9px; border-radius: 7px; background: rgba(26,26,46,.06); color: #3a3a5e; } .ds-tag--live { background: #27ae60; color: #fff; }"
+    },
+    {
+      "name": "Day Dot",
+      "kind": "custom",
+      "refersTo": "icon-plate",
+      "description": "Кружок дня курса: выполненный, текущий, будущий.",
+      "html": "<span class=\"ds-dots\"><span class=\"ds-dot ds-dot--done\">✓</span><span class=\"ds-dot ds-dot--now\">5</span><span class=\"ds-dot\">6</span></span>",
+      "css": ".ds-dots { display: inline-flex; gap: 6px; } .ds-dot { width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font: 600 11px/1 Onest, sans-serif; color: #6f6f82; background: rgba(255,255,255,.6); border: 1px solid rgba(0,0,0,.06); } .ds-dot--done { background: linear-gradient(135deg,#27ae60,#2ecc71); color: #fff; border-color: transparent; } .ds-dot--now { color: #1a1a2e; border: 2px solid #1a1a2e; font-weight: 700; }"
+    },
+    {
+      "name": "Sticky Day Rail",
+      "kind": "nav",
+      "refersTo": "card-glass",
+      "description": "Липкая лента остановок дня с зелёной дорожкой прогресса.",
+      "html": "<nav class=\"ds-rail\"><a class=\"ds-rail__stop is-done\"><span class=\"ds-rail__dot\">✓</span>Утром Практика</a><a class=\"ds-rail__stop is-now\"><span class=\"ds-rail__dot\">●</span>Днём Теория</a><a class=\"ds-rail__stop\"><span class=\"ds-rail__dot\">○</span>Вечером Созвон</a><span class=\"ds-rail__track\"><span class=\"ds-rail__fill\"></span></span></nav>",
+      "css": ".ds-rail { position: relative; display: flex; gap: 4px; align-items: center; height: 52px; padding: 0 12px; background: rgba(255,255,255,.78); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,.04); font-family: Onest, sans-serif; } .ds-rail__stop { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; border-radius: 999px; font-size: 13px; font-weight: 500; color: #6f6f82; } .ds-rail__dot { width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: rgba(26,26,46,.06); font-size: 11px; } .ds-rail__stop.is-done .ds-rail__dot { background: linear-gradient(135deg,#27ae60,#2ecc71); color: #fff; } .ds-rail__stop.is-now { color: #1a1a2e; font-weight: 600; } .ds-rail__stop.is-now .ds-rail__dot { background: #1a1a2e; color: #fff; } .ds-rail__track { position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: rgba(39,174,96,.12); } .ds-rail__fill { display: block; height: 100%; width: 100%; transform: scaleX(.42); transform-origin: left center; background: linear-gradient(90deg,#27ae60,#2ecc71); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Утренний свет на стекле",
+    "overview": "Лендинг не придумывает свой мир, а выносит мир приложения InStep на широкий экран: светлый серо-голубой туман вместо фона, матовое стекло вместо карточек, тёмно-синие чернила вместо чёрного и один зелёный, который появляется только там, где что-то выполнено или идёт. Всё, что в приложении было экраном 430 px, на лендинге стоит в кадре телефона и работает по-настоящему. Плотность спокойная: крупные секции с одним смыслом, большие заголовки без подписей-шапок над ними. Единственный оживлённый элемент: лента дня, которая зажигается при загрузке и заполняется зелёным по мере прокрутки.",
+    "keyCharacteristics": [
+      "Светлый туманный фон и стекло 65 % с белой волосяной рамкой, как в shared.js приложения",
+      "Один шрифт Onest на всех ролях, иерархия только весом, размером и цветом",
+      "Зелёный только для состояния «выполнено, идёт, живое»; кнопки действия чернильные",
+      "Линейные иконки lucide 2 px в светло-зелёных плашках, никаких эмодзи",
+      "Живые мини-экраны приложения вместо статичных картинок"
+    ],
+    "rules": [
+      { "name": "The Green Means Done Rule", "body": "Зелёный говорит «выполнено», «идёт» или «живое»: прогресс, точки дней, плашки иконок, бейдж «идёт сейчас». Кнопки действия на лендинге всегда чернильные или прозрачные.", "section": "colors" },
+      { "name": "The Glass Needs Mist Rule", "body": "Стекло живёт только на градиентном тумане; фон страницы фиксирован и не меняется по секциям.", "section": "colors" },
+      { "name": "The No Kicker Rule", "body": "Над заголовком секции нет служебной подписи капителью. Единственная подпись над H2 остановки дня несёт информацию о структуре дня и набрана строчными.", "section": "typography" },
+      { "name": "The Tinted Shadow Rule", "body": "Тень всегда цвета чернил с низкой непрозрачностью и смещением вниз. Нулевое смещение и чистый чёрный не используются.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do держать фон страницы одним туманным градиентом на всю высоту; секции не меняют фон.",
+      "Do набирать все роли шрифтом Onest и строить иерархию весом 400/500/600/700 и размером.",
+      "Do показывать продукт живым компонентом в кадре телефона, а не картинкой-макетом из div.",
+      "Do подписывать всё, что не является правдой продукта, бейджем «пример».",
+      "Do использовать табличные цифры для времени, отсчётов и чисел курса.",
+      "Do давать каждому интерактивному элементу hover с подъёмом 1–2px и зелёный фокус."
+    ],
+    "donts": [
+      "Don't ставить эмодзи или юникод-глифы вместо иконок; только lucide 2px или авторский SVG.",
+      "Don't использовать нативные select, prompt, alert.",
+      "Don't красить кнопки действия зелёным; зелёный значит «выполнено».",
+      "Don't рисовать пунктирные рамки-коробки и цветные полосы border-left на карточках.",
+      "Don't ставить служебную подпись капителью над заголовками секций.",
+      "Don't писать длинное тире и разрядку капителью в тексте страницы."
+    ]
+  }
+}
