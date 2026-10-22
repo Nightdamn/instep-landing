@@ -50,8 +50,21 @@ public/
   или тестового аккаунта их можно заменить картинками.
 - Кнопки Google Play / App Store / APK помечены «скоро» и никуда не ведут.
 
+## Деплой
+
+Адрес: `https://site.instep.expert` (решение Димы 2026-10-23), сервер instep-prod `77.222.42.201`,
+каталог `/opt/instep-landing`, nginx-сайт `site.instep.expert` отдаёт `dist/`.
+Репо публичный: `github.com/Nightdamn/instep-landing`, сервер тянет его без учётных данных.
+
+```bash
+# с ПК: push в main, затем
+ssh -i C:/AI/keys/instep_server root@77.222.42.201 "bash /opt/instep-landing/deploy/deploy.sh"
+```
+
+Конфиг nginx лежит в `deploy/nginx/`, сертификат выпускается `certbot --nginx -d site.instep.expert`
+после появления A-записи `site` → 77.222.42.201 у reg.ru.
+
 ## Открытые решения
 
-- Где разворачивать: корень `instep.expert` (приложение переезжает на поддомен или `/app`) или отдельный путь.
 - Фото мастеров: пока плейсхолдеры-инициалы.
 - Контакт для мастеров, которым нужно открыть права: сейчас текст «права открывает администратор».
