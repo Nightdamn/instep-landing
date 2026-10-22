@@ -61,8 +61,9 @@ public/
 ssh -i C:/AI/keys/instep_server root@77.222.42.201 "bash /opt/instep-landing/deploy/deploy.sh"
 ```
 
-Конфиг nginx лежит в `deploy/nginx/`, сертификат выпускается `certbot --nginx -d site.instep.expert`
-после появления A-записи `site` → 77.222.42.201 у reg.ru.
+Конфиг nginx лежит в `deploy/nginx/` (включая 443-блок, дописанный certbot). Сертификат Let's Encrypt
+выпущен 2026-10-23, продлевается автоматически; HTTP редиректит на HTTPS. `deploy.sh` конфиг не трогает,
+при изменении конфига копировать его в `/etc/nginx/sites-available/site.instep.expert` руками и `nginx -t`.
 
 ## Открытые решения
 
