@@ -25,7 +25,7 @@ export default function Proof() {
               <Fact icon={Users} value={REAL_COURSE.enrolled} label="участников в двух потоках" />
               <Fact icon={ListChecks} value={REAL_COURSE.practices} label={`практик в курсе, из них ${REAL_COURSE.calls} созвонов`} />
               <Fact icon={Video} value={REAL_COURSE.recordings} label="записей созвонов лежат в своих днях" />
-              <Fact icon={Layers} value={REAL_COURSE.days} label="дней длится курс" />
+              <Fact icon={Layers} value={REAL_COURSE.days} label="дней в курсе" />
             </ul>
             <p className="proof__master">Курс «{REAL_COURSE.title}» ведёт {REAL_COURSE.author}: два потока стартовали 26 сентября и идут по дням в приложении.</p>
           </div>
