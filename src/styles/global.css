@@ -10,7 +10,7 @@
   --hdr-h: 68px;
   --green: #27ae60;
   --green-2: #2ecc71;
-  --green-deep: #1f8f4e;
+  --green-deep: #17703d;   /* 5.2:1 на самой тёмной полосе тумана, для мелких зелёных подписей */
   --green-wash: rgba(39, 174, 96, 0.08);
   --green-line: rgba(39, 174, 96, 0.2);
   --orange: #e67e22;

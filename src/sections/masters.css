@@ -19,7 +19,7 @@
 .cmp__cell { display: flex; align-items: center; padding: 14px 16px; border-radius: 12px; background: rgba(255,255,255,0.45); border: 1px solid var(--glass-border); font-size: 15px; color: var(--ink-soft); line-height: 1.4; }
 .cmp__cell--us { background: var(--glass); color: var(--ink); font-weight: 600; border-color: var(--green-line); }
 .cmp__row--head .cmp__cell { background: transparent; border-color: transparent; font-weight: 700; color: var(--ink); padding-bottom: 4px; }
-.cmp__row--head .cmp__cell--us { color: var(--green-deep); }
+.cmp__row--head .cmp__cell--us { color: var(--ink); }
 
 @media (max-width: 1000px) {
   .mas__pillars { grid-template-columns: 1fr; gap: 40px; }

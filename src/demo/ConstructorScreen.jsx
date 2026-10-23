@@ -11,9 +11,8 @@ const TYPES = [
 const ICON = Object.fromEntries(TYPES.map((t) => [t.key, t.icon]));
 
 const START = [
-  { day: 1, items: [{ key: 'media', label: 'Разминка, 10 мин' }, { key: 'theory', label: 'Откуда начинается шаг' }] },
-  { day: 2, items: [{ key: 'media', label: 'Стояние, 15 мин' }, { key: 'media', label: 'Прогулка, 20 мин' }] },
-  { day: 3, items: [{ key: 'call', label: 'Разбор недели, 19:00' }] },
+  { day: 1, items: [{ key: 'media', label: 'Этюд: небо, 15 мин' }, { key: 'theory', label: 'Как держать кисть' }] },
+  { day: 2, items: [{ key: 'media', label: 'Этюд: вода, 20 мин' }, { key: 'call', label: 'Разбор работ, 19:00' }] },
 ];
 
 export default function ConstructorScreen({ onBack }) {
@@ -22,7 +21,9 @@ export default function ConstructorScreen({ onBack }) {
 
   const add = (key) => {
     const label = { media: 'Практика, 15 мин', theory: 'Теория', call: 'Созвон, 19:00', task: 'Задание' }[key];
-    setDays((d) => d.map((x) => (x.day === 3 ? { ...x, items: [...x.items, { key, label }] } : x)));
+    setDays((d) => (d.some((x) => x.day === 3)
+      ? d.map((x) => (x.day === 3 ? { ...x, items: [...x.items, { key, label }] } : x))
+      : [...d, { day: 3, items: [{ key, label }] }]));
     setSaved(false);
     setTimeout(() => setSaved(true), 900);
   };

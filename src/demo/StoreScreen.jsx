@@ -31,17 +31,15 @@ export default function StoreScreen({ onBack, highlightTop = false }) {
             const Icon = Cat?.icon;
             return (
               <li key={r.id}>
-                <div className={`prac glass${highlightTop && i === 0 ? ' is-active' : ''}`}>
+                <div className={`prac glass${highlightTop && i === 1 ? ' is-active' : ''}`}>
                   <span className="prac__icon">{r.avatar ? <img src={r.avatar} alt="" /> : Icon && <Icon size={22} strokeWidth={2} color="#27ae60" />}</span>
                   <span className="prac__text">
                     <span className="prac__label">{r.title}</span>
                     <span className="prac__meta">{r.isExample ? Cat?.label : r.author}, {r.days} дн.</span>
                   </span>
-                  <span className={`price${r.price === 'бесплатно' || !r.isExample ? ' price--free' : ''}`}>
-                    {!r.isExample ? 'поток' : r.price}
-                  </span>
+                  <span className="price">{!r.isExample ? 'поток' : r.price}</span>
                 </div>
-                {highlightTop && i === 0 && <div className="store__top"><TrendingUp size={12} strokeWidth={2.4} aria-hidden="true" /> в первых строках витрины</div>}
+                {highlightTop && i === 1 && <div className="store__top"><TrendingUp size={12} strokeWidth={2.4} aria-hidden="true" /> продвижение в первые строки, пример</div>}
               </li>
             );
           })}

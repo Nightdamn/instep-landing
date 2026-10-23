@@ -1,6 +1,6 @@
 .stu { padding: clamp(56px, 8vw, 104px) 0; }
 .stu__head { max-width: 680px; margin-bottom: 36px; }
-.stu__grid { display: grid; grid-template-columns: 1fr minmax(380px, 440px); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.stu__grid { display: grid; grid-template-columns: 1fr minmax(380px, 440px); gap: clamp(28px, 5vw, 72px); align-items: start; }
 .stu__list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .benefit {
   width: 100%; text-align: left; display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border-radius: var(--r-lg);

@@ -8,7 +8,7 @@ import { BENEFITS, STEPS } from '../data/content.js';
 import './students.css';
 
 export default function Students() {
-  const [active, setActive] = useState('day');
+  const [active, setActive] = useState('timer');
   const [callMode, setCallMode] = useState('before');
 
   const screen = {

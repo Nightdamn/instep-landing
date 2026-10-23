@@ -1,6 +1,17 @@
 import React from 'react';
+import { Users, ListChecks, Video, Layers } from 'lucide-react';
 import { REAL_COURSE, TESTIMONIALS } from '../data/content.js';
 import './proof.css';
+
+function Fact({ icon: Icon, value, label }) {
+  return (
+    <li className="pfact">
+      <span className="pfact__icon"><Icon size={18} strokeWidth={2} aria-hidden="true" /></span>
+      <span className="pfact__value">{value}</span>
+      <span className="pfact__label">{label}</span>
+    </li>
+  );
+}
 
 export default function Proof() {
   return (
@@ -9,13 +20,13 @@ export default function Proof() {
         <div className="proof__grid">
           <div className="proof__facts glass">
             <h2 id="proof-title" className="h2 proof__h2">Платформа уже работает</h2>
-            <p className="lead">Первый живой курс идёт прямо сейчас. Числа ниже из базы платформы, не из презентации.</p>
-            <dl className="nums">
-              <div><dt>курс идёт сейчас</dt><dd>1</dd></div>
-              <div><dt>участников в двух потоках</dt><dd>{REAL_COURSE.enrolled}</dd></div>
-              <div><dt>практик с таймером</dt><dd>{REAL_COURSE.practices - REAL_COURSE.calls}</dd></div>
-              <div><dt>созвонов с записями</dt><dd>{REAL_COURSE.calls}</dd></div>
-            </dl>
+            <p className="lead">Первый живой курс идёт прямо сейчас: {REAL_COURSE.activeGroup} занимался на этой неделе. Числа из базы платформы, не из презентации.</p>
+            <ul className="pfacts" aria-label="Числа платформы">
+              <Fact icon={Users} value={REAL_COURSE.enrolled} label="участников в двух потоках" />
+              <Fact icon={ListChecks} value={REAL_COURSE.practices} label={`практик в курсе, из них ${REAL_COURSE.calls} созвонов`} />
+              <Fact icon={Video} value={REAL_COURSE.recordings} label="записей созвонов лежат в своих днях" />
+              <Fact icon={Layers} value={REAL_COURSE.days} label="дней длится курс" />
+            </ul>
             <p className="proof__master">Курс «{REAL_COURSE.title}» ведёт {REAL_COURSE.author}: два потока стартовали 26 сентября и идут по дням в приложении.</p>
           </div>
           <ul className="proof__quotes">

@@ -34,7 +34,7 @@ export default function Hero() {
                 ? <TimerScreen label={open.label} minutes={open.minutes} icon={open.icon} onBack={() => setOpen(null)} />
                 : <DayScreen onOpen={(it) => { if (it.type === 'media') setOpen(it); }} />}
           </Phone>
-          <p className="hero__phone-note">{role === 'student' ? 'Экран живой: нажмите практику, таймер пойдёт.' : 'Экран живой: добавьте практику в день 3.'}</p>
+          <p className="hero__phone-note">{role === 'student' ? 'Экран живой: нажмите практику, таймер пойдёт.' : 'Конструктор живой: добавьте практику в день 3, курс сохранится сам.'}</p>
         </div>
       </div>
     </section>

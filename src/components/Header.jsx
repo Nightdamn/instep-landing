@@ -46,7 +46,7 @@ export default function Header() {
         {NAV.map((n) => (
           <a key={n.href} href={n.href} className="hdr__drawer-link" onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>{n.label}</a>
         ))}
-        <a className="btn btn--ink" href={LOGIN_URL} tabIndex={open ? 0 : -1}>Войти в веб-версию</a>
+        <a className="btn btn--ink" href={LOGIN_URL} tabIndex={open ? 0 : -1}>Войти</a>
       </div>
     </header>
   );
