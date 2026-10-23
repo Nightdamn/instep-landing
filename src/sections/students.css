@@ -1,0 +1,29 @@
+.stu { padding: clamp(56px, 8vw, 104px) 0; }
+.stu__head { max-width: 680px; margin-bottom: 36px; }
+.stu__grid { display: grid; grid-template-columns: 1fr minmax(380px, 440px); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.stu__list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.benefit {
+  width: 100%; text-align: left; display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border-radius: var(--r-lg);
+  border: 1px solid transparent; transition: background 0.25s var(--ease-std), border-color 0.25s, transform 0.2s var(--ease-out), box-shadow 0.25s;
+}
+.benefit:hover { background: rgba(255,255,255,0.45); }
+.benefit.is-on { background: var(--glass); border-color: var(--glass-border); box-shadow: var(--shadow-glass); }
+.benefit__title { font-size: 19px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.2; color: var(--ink); position: relative; padding-left: 22px; }
+.benefit__title::before { content: ''; position: absolute; left: 0; top: 0.42em; width: 12px; height: 12px; border-radius: 50%; background: rgba(26,26,46,0.1); transition: background 0.25s; }
+.benefit.is-on .benefit__title::before { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+.benefit__text { font-size: 15px; color: var(--muted); line-height: 1.5; padding-left: 22px; }
+.benefit.is-on .benefit__text { color: var(--ink-soft); }
+.stu__phone { display: flex; justify-content: center; }
+
+.steps { list-style: none; margin-top: clamp(40px, 6vw, 72px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: step; }
+.step { border-radius: var(--r-xl); padding: 22px; display: flex; gap: 16px; align-items: flex-start; }
+.step__num { width: 40px; height: 40px; border-radius: 12px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; background: var(--ink); color: #fff; font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums; }
+.step__title { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+.step__text { margin-top: 6px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+.stu__cta { margin-top: 28px; display: flex; justify-content: center; }
+
+@media (max-width: 1000px) {
+  .stu__grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) { .stu__cta .btn { width: 100%; } }

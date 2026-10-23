@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from './components/Header.jsx';
 import Hero from './sections/Hero.jsx';
-import Day from './sections/Day.jsx';
-import Sections from './sections/Sections.jsx';
-import Courses from './sections/Courses.jsx';
-import Reviews from './sections/Reviews.jsx';
+import Catalog from './sections/Catalog.jsx';
+import Students from './sections/Students.jsx';
+import Masters from './sections/Masters.jsx';
+import Proof from './sections/Proof.jsx';
+import Faq from './sections/Faq.jsx';
 import Footer from './components/Footer.jsx';
 
 export default function App() {
@@ -14,10 +15,11 @@ export default function App() {
       <Header />
       <main id="main">
         <Hero />
-        <Day />
-        <Sections />
-        <Courses />
-        <Reviews />
+        <Catalog />
+        <Students />
+        <Masters />
+        <Proof />
+        <Faq />
       </main>
       <Footer />
     </>

@@ -44,23 +44,50 @@ typography:
     fontSize: "clamp(16px, 1.3vw, 18px)"
     fontWeight: 400
     lineHeight: 1.5
+  body-lg:
+    fontFamily: "Onest, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    fontSize: "17px"
+    fontWeight: 400
+    lineHeight: 1.55
   body:
     fontFamily: "Onest, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
     fontSize: "15px"
     fontWeight: 400
     lineHeight: 1.5
+  small:
+    fontFamily: "Onest, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    fontSize: "14px"
+    fontWeight: 500
+    lineHeight: 1.45
+  caption:
+    fontFamily: "Onest, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    fontSize: "13px"
+    fontWeight: 500
+    lineHeight: 1.3
   label:
     fontFamily: "Onest, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
     fontSize: "12px"
     fontWeight: 500
     lineHeight: 1.3
+  micro:
+    fontFamily: "Onest, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    fontSize: "11px"
+    fontWeight: 700
+    lineHeight: 1.3
 rounded:
+  xs: "6px"
+  tag: "7px"
+  plate: "9px"
   sm: "10px"
+  plate-lg: "11px"
   md: "12px"
-  lg: "16px"
-  xl: "20px"
   button: "14px"
+  lg: "16px"
+  card: "18px"
+  xl: "20px"
+  screen: "38px"
   phone: "46px"
+  pill: "999px"
 spacing:
   xs: "8px"
   sm: "12px"

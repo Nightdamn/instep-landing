@@ -1,0 +1,15 @@
+.faq { padding: clamp(56px, 8vw, 104px) 0 0; }
+.faq__grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(24px, 4vw, 64px); align-items: start; }
+.faq__head { position: sticky; top: calc(var(--hdr-h) + 24px); }
+.faq__list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.qa { border-radius: var(--r-lg); overflow: hidden; }
+.qa__q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; text-align: left; font-size: 17px; font-weight: 600; color: var(--ink); }
+.qa__icon { width: 32px; height: 32px; border-radius: 9px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; background: var(--green-wash); color: var(--green); transition: transform 0.3s var(--ease-out), background 0.2s; }
+.qa.is-open .qa__icon { transform: rotate(45deg); background: var(--ink); color: #fff; }
+.qa__a { padding: 0 20px 20px; }
+.qa__a p { font-size: 15px; line-height: 1.55; color: var(--ink-soft); max-width: 62ch; }
+
+@media (max-width: 860px) {
+  .faq__grid { grid-template-columns: 1fr; }
+  .faq__head { position: static; }
+}

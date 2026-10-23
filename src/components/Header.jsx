@@ -5,11 +5,11 @@ import { LOGIN_URL } from '../data/content.js';
 import './header.css';
 
 const NAV = [
-  { href: '#how', label: 'Как проходит' },
-  { href: '#sections', label: 'Разделы' },
   { href: '#courses', label: 'Курсы' },
-  { href: '#reviews', label: 'Отзывы' },
-  { href: '#apps', label: 'Приложение' },
+  { href: '#students', label: 'Ученикам' },
+  { href: '#masters', label: 'Мастерам' },
+  { href: '#proof', label: 'Платформа' },
+  { href: '#faq', label: 'Вопросы' },
 ];
 
 export default function Header() {

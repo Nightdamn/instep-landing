@@ -38,10 +38,11 @@
 .scr__body { flex: 1; min-height: 0; padding: 16px 16px 20px; display: flex; flex-direction: column; gap: 14px; overflow: hidden; }
 .scr__body--center { align-items: center; justify-content: flex-start; gap: 18px; }
 
-.scr__tabs { display: flex; gap: 8px; }
+.scr__tabs { display: flex; flex-shrink: 0; gap: 8px; }
+.scr__top, .scr__progress, .ctor__meta { flex-shrink: 0; }
 .scr__tab { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 36px; border-radius: 11px; font-size: 13px; font-weight: 600; color: var(--ink); background: rgba(255,255,255,0.6); border: 1px solid var(--hairline); }
 .scr__tab svg { color: var(--green); }
-.scr__ribbon { display: flex; gap: 6px; overflow: hidden; padding: 2px; mask-image: linear-gradient(90deg, #000 85%, transparent); -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); }
+.scr__ribbon { display: flex; flex-shrink: 0; gap: 6px; overflow: hidden; padding: 2px; mask-image: linear-gradient(90deg, #000 85%, transparent); -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); }
 .dot {
   flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
   font-size: 11px; font-weight: 600; color: var(--muted); background: rgba(255,255,255,0.6); border: 1px solid var(--hairline);
@@ -137,6 +138,34 @@
 .cell--half { background: linear-gradient(135deg, #27ae60 50%, rgba(26,26,46,0.06) 50%); }
 .cab__note { grid-column: 2; font-size: 11px; color: var(--muted); }
 .cab__foot { font-size: 11px; color: var(--muted); text-align: center; margin-top: auto; }
+
+/* Конструктор */
+.saved { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.saved.is-on { color: var(--green-deep); }
+.ctor__meta { display: flex; gap: 8px; flex-wrap: wrap; }
+.ctor__chip { font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 9px; background: rgba(255,255,255,0.6); border: 1px solid var(--hairline); color: var(--ink-soft); }
+.ctor { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.ctor__day { border-radius: 14px; padding: 10px 12px; }
+.ctor__day-head { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.ctor__items { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.ctor__item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-soft); padding: 6px 8px; border-radius: 9px; background: rgba(255,255,255,0.55); }
+.ctor__item svg { color: var(--green); flex-shrink: 0; }
+.ctor__add { margin-top: auto; padding: 10px 12px; border-radius: 14px; background: var(--green-wash); border: 1px solid var(--green-line); }
+.ctor__add-label { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--green-deep); margin-bottom: 8px; }
+.ctor__types { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.ctor__type { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 4px; border-radius: 10px; background: #fff; border: 1px solid var(--hairline); font-size: 11px; font-weight: 600; color: var(--ink); transition: transform 0.15s var(--ease-std), border-color 0.2s; }
+.ctor__type svg { color: var(--green); }
+.ctor__type:hover { border-color: var(--green-line); }
+.ctor__type:active { transform: scale(0.96); }
+
+/* Магазин */
+.store__cats { display: flex; flex-shrink: 0; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; -webkit-mask-image: linear-gradient(90deg, #000 90%, transparent); mask-image: linear-gradient(90deg, #000 90%, transparent); }
+.store__cats::-webkit-scrollbar { display: none; }
+.store__cat { flex-shrink: 0; padding: 7px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; color: var(--ink-soft); background: rgba(255,255,255,0.6); border: 1px solid var(--hairline); transition: background 0.2s, color 0.2s; }
+.store__cat.is-on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.price { font-size: 12px; font-weight: 700; color: var(--ink-soft); white-space: nowrap; flex-shrink: 0; }
+.price--free { color: var(--green-deep); }
+.store__top { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; color: var(--green-deep); padding: 4px 14px 0; }
 
 .scr__switch { align-self: center; margin-top: auto; font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: underline; text-underline-offset: 0.2em; padding: 8px; }
 .scr__switch:hover { color: var(--ink); }
